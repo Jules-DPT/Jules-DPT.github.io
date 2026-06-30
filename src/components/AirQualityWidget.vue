@@ -320,6 +320,8 @@ function getSubIndexTempHorsSaisonChauffe(tempIndoor: number, tR: number): numbe
     if (tempIndoor <= opt + 2) return interpolate(tempIndoor, opt + 1, 7.5, opt + 2, 5)
     if (tempIndoor <= opt + 3) return interpolate(tempIndoor, opt + 2, 5, opt + 3, 2.5)
     return interpolate(tempIndoor, opt + 3, 2.5, opt + 4, 0)
+  } else if (tempIndoor >= 30) {
+    return 0
   } else {
     if (tempIndoor >= opt - 1) return interpolate(tempIndoor, opt - 1, 7.5, opt, 10)
     if (tempIndoor >= opt - 2) return interpolate(tempIndoor, opt - 2, 5, opt - 1, 7.5)
